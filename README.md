@@ -38,7 +38,7 @@ Once you've installed the application, simply enter a valid YouTube video URL in
 This web application was built using the following technologies:
 
 + HTML
-+ CSS
++ SCSS
 + JavaScript
 + YouTube API
 
