@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://apis.google.com/js/api.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="dist/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="dist/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="main-title">Youtube Detail Finder</h1>
+      <div class="wrapper">
+        <input class="input" placeholder="Please Enter URL" type="text" id="youtube-url" />
+      </div>
+      <button class="submit" onclick="clickButton()">GET INFO</button>
+
+      <div class="load-bar" id="loader">
+        <div class="load-bar-inner" data-loading="0">
+            <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="details" id="deiatls">
+        <div class="thumbnail-info">
+            <h4 id="video-title"></h1>
+            <div id="thumbnail-container"></div>
+            <p>
+                The YouTube video you entered in this search was uploaded by the YouTube channel called <span id="channel-name"></span>, and it has managed to get <span id="like-count"></span> likes along with <span id="views-count"></span> views.
+            </p>
+            <p>The video that you are searching for</p>
+            
+            
+            
+        </div>
+
+        <div class="discription">
+            <p id="description"></p>
+        </div>
+        
+        <div id="comments">
+            <h6>Recent Comments</h2>
+            <div id="one-comment">
+                <p id="user"></p>
+                <p id="comment"></p>
+            </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    
     <script src="dist/all.js"></script>
-</body>
+  </body>
 </html>

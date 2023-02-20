@@ -1,0 +1,49 @@
+// @import "compass/css3";
+
+
+.load-bar {
+  width: 50%;
+  min-width: 300px;
+  max-width: 900px;
+  height: 40px;
+  border-radius: 30px;
+  background: #dcdbd7;
+  margin-top: 50px;
+
+  display: none;
+}
+
+.load-bar:hover .load-bar-inner,
+.load-bar:hover #counter {
+ 	animation-play-state: paused; 
+}
+
+.load-bar-inner {
+  height: 99%;
+  width: 0%;
+  border-radius: inherit;
+  background: rgb(70, 70, 255);
+
+  animation: loader 10s linear infinite;
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+
+  p{
+    padding-left: 20px;
+  }
+}
+
+
+@keyframes loader {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes counter {
+  from { left: -25px; }
+  to { left: 323px; }
+}
