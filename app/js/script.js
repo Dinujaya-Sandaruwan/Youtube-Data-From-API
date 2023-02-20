@@ -1,17 +1,20 @@
 //Loading Animation
-let animator = document.getElementById('loader');
-let deiatls = document.getElementById('deiatls');
+let animator = document.getElementById("loader");
+let deiatls = document.getElementById("deiatls");
 
 function hideLoader() {
-  deiatls.style.display = 'none';
+  deiatls.style.display = "none";
   setTimeout(function() {
-    animator.style.display = 'none';
-  }, 9997); // 9000 milliseconds = 9 seconds
+    animator.style.display = "none";
+  }, 9997);
 };
 
 function clickButton(){
 
-  animator.style.display = 'block';
+  document.getElementById('wrong').style.display = "none";
+  document.getElementById('me').style.display = "none";
+
+  animator.style.display = "block";
   hideLoader()
 
   setInterval(showVideoInfo, 9997);
@@ -30,6 +33,8 @@ function initClient() {
 }
 
 async function showVideoInfo() {
+
+  document.getElementById('wrong').style.display = "none";
 
   try {
     // Get the input URL from the user
@@ -74,16 +79,16 @@ async function showVideoInfo() {
     titleElement.innerText = videoTitle;
 
     const likeCountElement = document.getElementById("like-count");
-    likeCountElement.innerText = `Likes: ${likeCount}`;
+    likeCountElement.innerText = `${likeCount}`;
 
     const viewCountElement = document.getElementById("views-count");
-    viewCountElement.innerText = `Views: ${viewCount}`;
+    viewCountElement.innerText = `${viewCount}`;
 
     const descriptionElement = document.getElementById("description");
     descriptionElement.innerText = description;
 
     const channelNameElement = document.getElementById("channel-name");
-    channelNameElement.innerText = `Channel: ${channelName}`;
+    channelNameElement.innerText = `${channelName}`;
 
     // Call the YouTube Data API to get the video's comments
     const commentResponse = await gapi.client.youtube.commentThreads.list({
@@ -106,15 +111,19 @@ async function showVideoInfo() {
 
       const commentElement = document.createElement("div");
       commentElement.id = "one-comment";
-      commentElement.innerHTML = `<p id="user">${username}</p><p id="comment">${commentText}</p>`;
+      commentElement.innerHTML = `<p id="user">${username}</p><p id="comment">${commentText}</p><hr>`;
 
       commentsContainer.appendChild(commentElement);
     });
 
-    animator.style.display = 'none';
-    deiatls.style.display = 'block';
+    // Display loading animation
+    animator.style.display = "none";
+    deiatls.style.display = "block";
+
+    document.getElementById('me').style.display = "block";
 
   } catch (error) {
     console.error(error);
+    document.getElementById('wrong').style.display = "block";
   }
 }

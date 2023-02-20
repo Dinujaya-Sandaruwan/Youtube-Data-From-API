@@ -18,3 +18,20 @@ body{
     background-color: #a02cff;
     font-family: 'Roboto', sans-serif;;
 }
+
+/* Hide scrollbar for all elements */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Optional: Customize scrollbar style */
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 5px;
+  }
+  

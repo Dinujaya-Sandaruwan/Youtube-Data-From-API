@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://apis.google.com/js/api.js"></script>
-    <title>Document</title>
+    <title>Youtube Details Finder - Dinujaya Sandaruwan</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
     <div class="main">
-      <h1 class="main-title">Youtube Detail Finder</h1>
+      <h1 class="main-title">Youtube Details Finder</h1>
       <div class="wrapper">
-        <input class="input" placeholder="Please Enter URL" type="text" id="youtube-url" />
+        <input class="input" placeholder="Enter Youtube URL" type="text" id="youtube-url" />
       </div>
       <button class="submit" onclick="clickButton()">GET INFO</button>
 
@@ -23,35 +24,31 @@
       </div>
 
       <div class="details" id="deiatls">
-        <div class="thumbnail-info">
-            <h4 id="video-title"></h1>
+
+        <div class="thumbnail-info video-detail">
+            <h4 id="video-title"></h4>
             <div id="thumbnail-container"></div>
             <p>
                 The YouTube video you entered in this search was uploaded by the YouTube channel called <span id="channel-name"></span>, and it has managed to get <span id="like-count"></span> likes along with <span id="views-count"></span> views.
             </p>
-            <p>The video that you are searching for</p>
-            
-            
-            
         </div>
 
-        <div class="discription">
+        <div class="discription video-detail">
+            <h4>Description</h4>
             <p id="description"></p>
         </div>
-        
-        <div id="comments">
-            <h6>Recent Comments</h2>
-            <div id="one-comment">
-                <p id="user"></p>
-                <p id="comment"></p>
-            </div>
+
+        <div class="comments video-detail">
+            <h4 >Comments</h4>
+            <div id="comments"></div>
         </div>
       </div>
 
-
-
+      <div class="wrong" id="wrong"> <h4>Something Went Wrong...</h4></div>
     </div>
 
+
+    <div class="me" id="me"><h6><i>Created By Dinujaya Sandaruwan</i></h6></div>
     
     <script src="dist/all.js"></script>
   </body>
